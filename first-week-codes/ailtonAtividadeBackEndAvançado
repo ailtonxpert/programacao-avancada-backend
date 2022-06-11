@@ -1,0 +1,572 @@
+/*
+WebAcademy
+Desenvolvimento Full Stack
+Workout BackEnd Avançado
+JavaScript
+Ailton de Queiroz Cavalcante
+*/
+
+
+/*A mensagem é exibida no Dev Tools 
+do navegador em vez de aparecer no corpo da página HTML*/
+console.log("Hello World");
+
+
+/*variáveis
+O tipo de variável VAR podem ser atualizadas
+e declaradas novamente dentro de seu escopo. 
+FONTE: https://www.freecodecamp.org/portuguese/news/var-let-e-const-qual-e-a-diferenca/#:~:text=Hoisting%20de%20const&text=Variáveis%20de%20var%20podem%20ser%20atualizadas%20e%20declaradas%20novamente%20dentro,o%20topo%20de%20seu%20escopo.*/
+var x = 10;
+
+/*forma mais convenientes de declarar variáveis
+O tipo de variável LET podem ser atualizadas, 
+mas não podem ser declaradas novamente. 
+FONTE: https://www.freecodecamp.org/portuguese/news/var-let-e-const-qual-e-a-diferenca/#:~:text=Hoisting%20de%20const&text=Variáveis%20de%20var%20podem%20ser%20atualizadas%20e%20declaradas%20novamente%20dentro,o%20topo%20de%20seu%20escopo.*/
+let y = 50;
+const z = '';
+
+
+/*O tipo de variável CONST
+CONST precisa de inicialização durante sua declaração. 
+FONTE: https://www.freecodecamp.org/portuguese/news/var-let-e-const-qual-e-a-diferenca/#:~:text=Hoisting%20de%20const&text=Variáveis%20de%20var%20podem%20ser%20atualizadas%20e%20declaradas%20novamente%20dentro,o%20topo%20de%20seu%20escopo.*/
+const t = z+10;
+
+y = 20;
+console.log(y);
+
+
+// Bloco de decisão
+if(1){
+	let y = 15
+	console.log(y)
+}
+
+console.log(y)
+
+//tipos
+
+/* A variável "nome" está recebendo uma String 
+que é uma cadeia de caracteres.
+"typeof" faz com que o tipo de dado seja exibido no 
+DevTools do navegador.*/
+const nome = "Maria"
+console.log(nome)
+console.log(typeof nome)
+
+
+// A variável "idade" está recebendo um tipo de dado Number.
+const idade = 46
+console.log(idade)
+console.log(typeof idade)
+
+
+const peso = 94.2
+console.log(peso)
+console.log(typeof peso)
+
+//null
+const nada = null
+console.log(nada)
+console.log(typeof nada)
+
+
+/* "undefined" é exibido quando o tipo de dado 
+não é identificado pelo console*/
+const indefinido = null
+console.log(indefinido)
+console.log(typeof indefinido)
+
+
+/*"Boolean" tipo de dado com dois valores TRUE and FALSE*/
+const vouf = true
+console.log(vouf)
+console.log(typeof vouf)
+
+/*arrays
+Arrays são coleção de objetos e 
+"length" indica o tamanho dele em JavaScript*/
+const vetor = ['Java','PHP','Python','HTML','CSS']
+console.log(vetor)
+console.log(typeof vetor)
+console.log("Tamanho vetor: ",vetor.length)
+
+/*object literals
+Objetos literais são exibidos pelo console 
+porque são declarados entre aspas.*/
+const usuario = {
+	email : 'ey@gmail.com',
+	senha: 'teste1230',
+	nome:'Dafyne',
+	idade:21
+}
+
+console.log(typeof usuario)
+
+const nome2 = "Tuf Militar"
+console.log(nome.length)
+
+
+/*toUpperCase é o método para transformar letras minúsculas 
+em maiúsculas e toLowerCase faz o inverso.*/
+const stringParaMonster= nome2.split('')
+console.log(stringParaMonster)
+console.log(nome2.toUpperCase())
+console.log(nome2.toLowerCase())
+
+const nome2Maiusculo = nome2.toUpperCase()
+console.log("Variável nova: "+nome2Maiusculo)
+
+
+/*O número entre colchetes após o nome do vetor
+ indica a posição do elemento dentro do vetor.*/
+console.log(nome2Maiusculo[0])
+console.log(nome2Maiusculo[nome2Maiusculo.length-1])
+
+/*O método slice() retorna uma parte de um array a partir de um subarray 
+entre as posições início e fim. No caso do vetor 'nome2Maiusculo', 
+o retorno está entre a posição 0 e a posição 5.*/
+console.log("Vetor método slice: ",nome2Maiusculo.slice(0,5))
+
+
+//arrays,vetores, listas
+const lista = ['a','b','c','d','e']
+console.log(lista)
+
+console.log(lista.length)
+console.log("3º elemento da lista: "+lista[2])
+console.log("Tipo de objeto 'Lista': "+typeof lista)
+lista[0]= 'Dafyne'
+lista[5]='f'
+console.log("Lista modificada: "+lista)
+lista.push('g')
+console.log(lista)
+lista.pop()
+console.log(lista)
+
+/*O métodp shift retira o primeiro elemento da lista. 
+Como temos o método shift repetido por 3 vezes, 
+significa que retiramos os três primeiros 
+elementos do vetor.*/
+lista.shift()
+lista.shift()
+lista.shift()
+console.log(lista)
+
+/*O método 'unshift' coloca um elemento no início da lista.
+Nesse caso, é a letra h.*/
+lista.unshift('h')
+console.log(lista)
+
+//object literals: estruturas que descrevem entidade
+/*OBJECT LITERALS: é um controle de fluxo em JavaScript. Ele faz
+algo semelhante ao que o Switch fazia, porém, os objetos são mais
+flexíveis e de fácil manutenção. FONTE (com adaptações):https://dev.to/
+lukyhenson/substitua-sua
+-instrucao-switch-e-varios-if-and-else-usando-object-literals-pt-br-4po9   */
+const produto={
+	nome:"Camisa",
+	preco:9.99,
+	emEstoque:true,
+	size:['P','M','G'],
+	'Cor':'azul'
+}
+
+//Somente a cor será exibida no DevTools
+console.log(produto.Cor)
+
+//com aspas duplas não funciona.
+console.log(produto['Cor'])
+
+
+/*destructuring - recurso para objetos para extrair 
+conteúdo de dentro de objetos. Nesse caso estamos extraindo 
+do array 'produto'
+*/
+const{preco, emEstoque}=produto
+console.log(preco)
+console.log(emEstoque)
+
+const[char1,char2]=lista
+console.log(char1)
+console.log(char2)
+
+
+/*JSON: JavaScript Object Notation - é uma forma de escrever 
+e toda forma de escrita tem regras.
+É um formato leve de troca de informações/dados entre sisteams.
+*/
+const doguinho = {
+	nome: 'Scooby',
+	idade:10
+}
+
+console.log("Tipo  'doguinho: '",typeof doguinho)
+
+/*Estamos transformado o conteúdo do objeto doguinho em uma anotação JSON */
+const json = JSON.stringify(doguinho)
+console.log(json)
+console.log(typeof json)
+
+const json2 = JSON.parse(json)
+console.log("JSON_2: "+json2)
+
+const jsonErrado = JSON.stringify('("nome":"Scooby","idade":10)')
+
+console.log(jsonErrado)
+
+/*ATIVIDADE:
+DESAFIO 1:
+Armazene 5 dados numéricos em um vetor.
+Em seguida, copie para um objeto com as propriedades n1,n2,n3,n4,n5.
+Utilize DESTRUCTURING para copiar os valores para 5 variáveis.
+Construa um objeto JSON com os valores das variáveis.*/
+
+
+/*Declaração do vetor de cinco elementos*/
+const vet = [1,2,3,4,5]
+
+
+/*Colocando cada elemento do vetor 
+em uma variável distinta. */
+const objeto ={
+	n1: vet[0],
+	n2: vet[1],
+	n3: vet[2],
+	n4: vet[3],
+	n5: vet[4]
+}
+
+/*Usando DESTRUCTURING  para copiar os 
+valores para as cinco variáveis propostas no desafio 1*/
+const{n1,n2,n3,n4,n5}=objeto
+
+
+/*Convertendo os valores JavaScript para uma String JSON.*/
+const jsonVetor = JSON.stringify(n1,n2,n3,n4,n5)
+
+//Exibindo o arquivo JSON.
+console.log(jsonVetor)
+
+
+/*DESAFIO 2:
+Desenvolva uma calculadora que armazene em um objeto JSON o resultado
+das quatro operações básicas. Em outras palavras: crie um objeto
+calculadora, inicializando cada uma das operações com o resultado do 
+processamento matemático vindo de duas variáveis e converta para
+um objeto JSON.*/
+
+//Definindo as variáveis
+const nota1 = 10,nota2 = 30
+
+//Formatando a calculadora com as quatro operações básicas.
+const calculadora={
+	soma:nota1+nota2,
+	sub:nota1-nota2,
+	mult:nota1*nota2,
+	div:nota1/nota2
+}
+
+//Transformado a calculadora em um objeto JSON.
+const jsonCalc = JSON.stringify(calculadora)
+
+//Exibindo o arquivo JSON no console.
+console.log(jsonCalc)
+
+
+//estruturas, métodos de listas, funções
+const n = 10
+if(n > 10){
+	console.log("Teste de entrada no if")
+}
+
+const texto = "texto"
+if(texto == 'texto')
+  console.log("Os dados são iguais!")
+
+else if(true)
+	console.log("Segundo IF - if aninhado.")
+else
+	console.log('Saída...')//erro na hora de pensar o código...
+
+//operador ternário
+/*O operador ternário é uma alternativa para substituir 
+o IF/ELSE com a vantagem de ser bem mais enxuto. 
+SINTAXE: CONDIÇÃO? VERDADEIRO : FALSO 
+Nesse caso estamos verificando se n é maior que 20.
+*/
+const resultado = n > 20 ? true : false
+console.log(resultado)
+console.log(typeof resultado)
+
+/*repetição: precisa de 3 partes: 
+I. variável de controle  e a inicialização dela;
+II.condição/critério de parada;
+III.alteração do valor da variável de controle
+
+Nesse caso, o laço de repetição WHILE percorrerá o vetor enquanto 
+o contador for menor/igual ao tamanho do vetor.
+*/
+
+let contador = 1
+const lista2 = [1,7,3,64,2,0]
+while(contador <= lista2.length){
+	console.log(lista2[contador])
+	contador++ //contador = contador + 1
+}
+
+/*As três partes do laço de repetição FOR:
+1. INICIALIZAÇÃO: expressão usada para iniciar o contador de variáveis.
+2. CONDIÇÃO: expressão para ser avaliada antes de cada iteração do loop.
+3. EXPRESSÃO FINAL: usada para atualizar ou incrementar a 
+variável do contador.
+FONTE (com adaptações): https://developer.mozilla.org/pt-BR/docs/Web/
+JavaScript/Reference/Statements/for
+
+Nesse caso, o laço percorre o vetor enquanto o 
+contador for menor do que o tamanho do array. 
+*/
+const lista3 = ['a','b','c','d','e','f']
+for(let contador = 0;contador<lista2.length;contador++)
+	console.log("O\'elemento'\ \nda vez é: "+lista3[contador]+".")//template literal ou template Strings
+
+
+/*A crase (ou acento grave) indica que estamos usando Template Strings.
+FONTE: https://developer.mozilla.org/pt-BR/docs/Web/
+JavaScript/Reference/Template_literals
+Nesse caso, estamos verificando 
+se os dois elemento são iguais e o resultaod é FALSE.
+*/
+
+const testeLiteral = (`\``===`"`)
+console.log("Teste Literal: ",testeLiteral)
+
+const a=1,b=5
+console.log('Oito é '+(a+b)+'\nnão: '+(2*a+b))
+
+/*Template strings podem possuir placeholders. 
+Estes são indicados por um cifrão seguido de chaves (${expression}). 
+FONTE: https://developer.mozilla.org/pt-BR/docs/Web/
+JavaScript/Reference/Template_literals
+
+*/
+console.log(`Oito é ${(a+b)} e não ${(2*a+b)}`)
+
+//métodos de lista-arrays-vetores
+const nomes = ['Abimael','Cleyciane','Paulo','Victor']
+nomes.forEach(function(nome){
+	console.log(nome)
+})
+
+/*O método MAP irá mapear o array até encontrar o elemento 'Paulo'.
+ Quando encontrá=lo, substituirá-lo pela expressão 'O Grande'
+ Onde não houver 'Paulo', ele exibirá os demais elementos do array.
+  */
+const nomesModificados = nomes.map(function(nome){
+	if(nome === 'Paulo')
+		return nome = 'O Grande'
+	else
+		return nome
+})
+
+
+/*O método forEach executa a função para cada
+elemento do array.
+*/
+nomesModificados.forEach(function(nome){
+		console.log(nome)
+})
+
+/*O método FILTER está filtrando o array a partir da condição numero > 10*/
+const numerosGrandes = ['6','1','9','17','99','94'].filter
+(function(numero){
+	return (numero > 10)
+})
+
+numerosGrandes.forEach(function(numero){
+	console.log(numero)
+})
+
+
+/*Métod REDUCE: serve para iterar sobre um array e utilizar
+ o valor de cada item para criar um 
+ objeto final com base em alguma regra.
+ */
+console.log(numerosGrandes.reduce(function(total,numero){
+	return parseInt(total)+parseInt(numero)
+}))
+
+	
+//funções
+/*São conjuntos de instruções que executam 
+uma tarefa ou calculam um valor. */
+function minhaFuncao(){
+	console.log('Estou dentro da minha função.')
+}
+
+minhaFuncao()
+
+const funcao = function minhaFuncao(nome,sobrenome){
+	console.log(typeof nome)
+	return ("olê olê",`${nome} ${sobrenome}`)
+}
+
+
+const nome3 = 'Victor'
+const sobrenome3 = 'Vieira'
+console.log(minhaFuncao('Victor','Vieira'))
+minhaFuncao(10,20)
+
+
+/*
+arrow functions - funções flecha
+maneira diferente de escrever uma função.
+*/
+const soma = (a,b) => a+b
+console.log(soma(5,3))
+
+const lista4 = ['a','b','c','d']
+
+console.log(lista4.map((elemento) =>{
+    return elemento.length
+}))
+
+console.log(lista4.map((elemento) =>{
+    return elemento.length
+}))
+
+// closures - fechamentos
+/*Entendi que é um função dentro de outra função.
+"Uma função aninhada que está disponível apenas
+no corpo da função.
+Não tem variáveis locais próprias e reusa a variável
+declarada na função pai."
+FONTE (COM ADAPTAÇÕES): https://developer.mozilla.org/
+pt-BR/docs/Web/JavaScript/Closures
+*/
+
+let x1 = 10
+function fora(){
+	function somarMais5(){
+		return x1+5
+	}
+	return somarMais5();
+}
+console.log(fora())
+
+
+/*redução da função acima que faz a mesma coisa que ela 
+só que em menos linhas*/
+let x2 = 10
+let fora2 = ()=>(()=>x2+5)()
+	
+console.log(fora2())
+console.log(typeof fora2())
+
+
+let x3 = 10
+function fora3(){
+	let x3 = 7
+	function somarMais5(){
+		return x3+5
+	}
+	return somarMais5();
+}
+console.log("Fora 3: "+fora3())
+
+const fora4 = ()=>((x=7),()=>x+5) ()
+
+console.log("Fora 4: "+fora4())
+
+/*Orientação a objetos:*/
+class Produto{
+    constructor(nome,preco){
+       this.nome = nome
+	   this.preco = preco
+    }
+
+    detalhesProduto(){
+    	console.log(`O preço do produto ${this.nome} é R$ ${this.preco}`)
+    }//só é possível usar literal com crase.
+	
+}
+
+const oculos = new Produto("Óculos",19.90)
+oculos.nome
+
+console.log(oculos.nome)
+console.log(typeof oculos)
+oculos.detalhesProduto()
+
+const meia = new Produto("meia",8.5)
+console.log("Meia: ",meia.detalhesProduto())
+
+
+//Herança
+class ProdutoComTamanho extends Produto{
+	constructor(nome,preco,tamanho){
+		super(nome,preco)
+		this.tamanho = tamanho
+	}
+
+	outraMensagem(adjetivo){
+		return `O produto ${this.nome} é ${adjetivo} demais`
+	}
+}
+
+
+const camisa = new ProdutoComTamanho('camisa','26.99','M')
+console.log(camisa.detalhesProduto())
+console.log(camisa.outraMensagem('bom'))
+
+
+//DOM - Document Object Model
+/*Estamos pegando o conteúdo do id 'titulo'
+ que foi declarado no HTML.
+ */
+const titulo = document.getElementById('titulo')
+console.log(titulo)
+
+//query selector
+/*Está exibindo o primeiro elemento declarado no html*/
+const mesmoTitulo = document.querySelector('#titulo')
+console.log(mesmoTitulo)
+
+/*
+Exibe o tipo de elemento HTML, que nesse caso é 'p'
+*/
+const todosOsParagrafos = document.querySelectorAll('.texto')
+console.log("todosOsParagrafos: ",todosOsParagrafos)
+
+
+/*Percorrendo o array e transformando o
+ conteúdo em letras maiúsculas.
+ */
+todosOsParagrafos.forEach((texto) => console.log(texto.textContent.toUpperCase()))
+
+//manipulação
+/*Aqui podemos manipular o elemento HTML 
+que desejarmos a partir do comando adequado.
+*/
+const textoAlterado = todosOsParagrafos[0].textContent
+console.log("texto alterado: ",textoAlterado)
+
+todosOsParagrafos[3].innerHTML=textoAlterado
+
+//Mudando a cor do parágrafo
+todosOsParagrafos[2].style.backgroundColor = 'red'
+
+todosOsParagrafos[3].classList.add('outra-classe')
+
+todosOsParagrafos[3].classList.remove('texto')
+
+titulo.remove()
+
+todosOsParagrafos[0].remove()
+
+//eventos
+//Usando o botão para alterar o parágrafo.
+const botao = document.getElementById('botao')
+
+	botao.addEventListener("click",function(){
+		todosOsParagrafos[3].style.backgroundColor='red'
+	})
